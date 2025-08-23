@@ -116,7 +116,7 @@ class PredictViewModel: ObservableObject {
             progressRate: Int(progressRate),
             workers: Int(selectedWorkerCount),
             startTime: accidentTime,
-            riskScore: Int(prediction * 100) // 0.0~1.0을 0~100으로 변환
+            riskScore: Int(prediction) // 0.0~1.0을 0~100으로 변환
         )
         
         repository.addTask(
@@ -129,7 +129,7 @@ class PredictViewModel: ObservableObject {
             riskScore: newTask.riskScore
         )
         
-        print("💾 예측 결과를 작업으로 저장: 위험도 \(Int(prediction * 100))점")
+        print("💾 예측 결과를 작업으로 저장: 위험도 \(Int(prediction))점")
         errorMessage = nil
     }
     
